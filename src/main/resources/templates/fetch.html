@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>My Web App</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+
+</head>
+<div class=container>
+<div class=container>
+<div><h4><a href="/">Log Out</a></h4> </div>
+<div>
+<div>
+	<h1 style="text-align: center;">
+        <span th:text="'Welcome back ' + ${obj2.fname} + ', below are your details:'"></span>        
+    </h1>
+	<h2 style="text-align: center;">
+		<span th:text="'User Name: ' + ${obj2.username}"></span><br>
+    	<span th:text="'First Name: ' + ${obj2.fname}"></span><br>
+        <span th:text="'Last Name: ' + ${obj2.lname}"></span><br>
+        <span th:text="'Email: ' + ${obj2.email}"></span><br>
+        <span th:text="'Word Count: ' + ${obj2.wc}"></span><br>
+    </h2>
+    
+    <form action="fileDownload" method=get  >
+    <input type= hidden th:value="${obj2.filepath}" name=filepath>
+    <button type = submit class="btn btn-primary btn-lg btn-block" >Download File</button>
+    </form>
+    </div>
+    </div>
+<body>
+</body>
+</html>

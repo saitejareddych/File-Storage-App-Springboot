@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>My Web App</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-xs-6">
+ <form action="addUser" method=post enctype="multipart/form-data" style="text-align: center;" >
+  <div class="form-group" style="text-aline:center; margin-top:5rem" >
+  <h2><span class="label label-default">New User? Register Here</span></h2>
+  	<input  type=text name="username"placeholder="User Name" class="form-control form-control-lg"><br>
+ 	<input  type=text name="fname"placeholder="First Name" class="form-control form-control-lg"><br>
+ 	<input type=text name="lname" placeholder="Last Name" class="form-control form-control-lg"><br>
+ 	<input type="email" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Enter email"name="email"><br>	
+ 	<input type=password name="password" placeholder="Password" class="form-control form-control-lg"><br>
+ 	 <p>UPLOAD A .TXT FILE BELOW<p>
+ 	 <input type=file class="form-control-file" name=file>
+ 	<button type = submit class="btn btn-primary btn-lg btn-block">Register</button>
+  </div>
+ </form>
+ </div>
+<div class="col-xs-6">
+ <form action ="getUser" method= get style="text-align: center";>
+<div class="form-group" style="text-aline:center;margin-top:5rem" >
+<h2><span class="label label-default">Already Registered? Login Here</span></h2>
+ <input type="text" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Enter User Name"name="username"><br>
+
+ <input type=password name="password" placeholder="Password" class="form-control form-control-lg"><br>
+ <button type = submit class="btn btn-primary btn-lg btn-block">Login</button>
+<p><strong><p th:text="${err}" /></strong></p>
+ </div>
+ </div>
+ </form>
+ </div>
+ 
+ </div>
+ 
+</body>
+</html>
